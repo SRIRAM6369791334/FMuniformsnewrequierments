@@ -1,0 +1,85 @@
+/* Custom CSS strictly for myaccount.blade.php */
+/* Tailwind CDN handles the primary styling. This file is for overrides specific to this theme without affecting other pages. */
+
+.page-index {
+    /* Scope any custom css here if needed */
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+ 
+::-webkit-scrollbar-thumb {
+    background: #001C38; 
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #b68a4c; 
+}
+
+/* Premium Animations */
+@keyframes fadeIn {
+    from { opacity: 0; backdrop-filter: blur(0px); }
+    to { opacity: 1; backdrop-filter: blur(4px); }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Glassmorphism & Premium accents */
+.premium-shadow {
+    box-shadow: 0 20px 50px -12px rgba(15, 23, 42, 0.15);
+}
+
+.gold-gradient-bar {
+    background: linear-gradient(90deg, #c99355 0%, #e2b683 50%, #c99355 100%);
+}
+
+.dark-navy-gradient {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+/* Print Invoice Styles */
+@media print {
+    /* Hide everything on the page except the invoice modal content */
+    body > *:not(#invoice-modal) {
+        display: none !important;
+    }
+    #invoice-modal {
+        position: absolute !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        background: transparent !important;
+        display: block !important;
+        overflow: visible !important;
+    }
+    #invoice-modal-content {
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    .no-print {
+        display: none !important;
+    }
+}

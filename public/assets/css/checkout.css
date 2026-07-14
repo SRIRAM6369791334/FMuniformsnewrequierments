@@ -1,0 +1,547 @@
+/* Checkout Page Styles */
+
+/* Page Title Area */
+.page-title-area {
+    background-color: #f8f9fa;
+    padding: 80px 0 60px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.page-title-content h2 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.page-title-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.page-title-content ul li {
+    display: inline-block;
+    font-size: 16px;
+    color: #666;
+    position: relative;
+    font-weight: 400;
+}
+
+.page-title-content ul li:not(:last-child):after {
+    content: '|';
+    margin: 0 15px;
+    color: #ccc;
+    font-weight: 300;
+}
+
+.page-title-content ul li a {
+    color: #666;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.page-title-content ul li a:hover {
+    color: #e74c3c;
+    text-decoration: underline;
+}
+
+.page-title-content ul li:last-child {
+    color: #e74c3c;
+    font-weight: 600;
+}
+
+/* Checkout Area */
+.checkout-area {
+    padding: 120px 0 80px;
+    background-color: #fff;
+    position: relative;
+}
+
+.checkout-area .container {
+    max-width: 1200px;
+}
+/* 
+.checkout-area::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #e74c3c 0%, #c0392b 100%);
+} */
+
+/* User Actions */
+.user-actions {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    border-left: 4px solid #e74c3c;
+}
+
+.user-actions i {
+    font-size: 24px;
+    color: #e74c3c;
+    margin-right: 15px;
+}
+
+.user-actions span {
+    font-size: 16px;
+    color: #333;
+}
+
+.user-actions a {
+    color: #e74c3c;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.user-actions a:hover {
+    color: #c0392b;
+}
+
+/* Billing Details */
+.billing-details {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    padding: 50px 40px;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.billing-details::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #e74c3c 0%, #f39c12 100%);
+}
+
+.billing-details .title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+    position: relative;
+    letter-spacing: 1px;
+}
+
+.billing-details .title::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #e74c3c 0%, #f39c12 100%);
+    border-radius: 2px;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.form-group .required {
+    color: #e74c3c;
+}
+
+/* Form Controls */
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #e74c3c;
+    box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.1);
+}
+
+/* Select Box */
+.select-box select.form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 12px center;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    padding-right: 40px;
+}
+
+/* Form Check (Checkboxes) */
+.form-check {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form-check-input {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.form-check-input:checked {
+    background-color: #e74c3c;
+    border-color: #e74c3c;
+}
+
+.form-check-label {
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+    margin-bottom: 0;
+}
+
+/* Order Details */
+.order-details {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    padding: 50px 40px;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.order-details::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #27ae60 0%, #2ecc71 100%);
+}
+
+.order-details .title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+    position: relative;
+    letter-spacing: 1px;
+}
+
+.order-details .title::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #27ae60 0%, #2ecc71 100%);
+    border-radius: 2px;
+}
+
+/* Order Table */
+.order-table {
+    margin-bottom: 30px;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 0;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 15px;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #333;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    border: none;
+}
+
+.table td {
+    background-color: #fff;
+    color: #333;
+}
+
+.table .product-name a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.table .product-name a:hover {
+    color: #e74c3c;
+}
+
+.table .subtotal-amount {
+    font-weight: 600;
+    color: #e74c3c;
+}
+
+.table .order-subtotal,
+.table .order-shipping,
+.table .order-total-price {
+    font-weight: 600;
+    color: #333 ;
+}
+
+.table .order-subtotal-price,
+.table .shipping-price, .order-total-price , .product-total {
+    text-align: center;
+}
+
+.table .product-subtotal {
+    background-color: #e74c3c;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* Payment Box */
+.payment-box {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Payment Method */
+.payment-method p {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+    display: none !important;
+}
+
+.payment-method input[type="radio"] {
+    margin-right: 10px;
+    accent-color: #e74c3c;
+}
+
+.payment-method label {
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+}
+
+.payment-method .payment-info {
+    margin-left: 25px;
+    margin-top: 5px;
+    font-style: italic;
+    color: #777;
+}
+
+/* Default Button */
+.default-btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #e74c3c;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+}
+
+.default-btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+/* Facility Area */
+.facility-area {
+    padding-bottom: 70px;
+    background-color: #fff;
+}
+
+.facility-slides .single-facility-box {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.facility-slides .single-facility-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.facility-slides .icon {
+    margin-bottom: 20px;
+}
+
+.facility-slides .icon i {
+    font-size: 48px;
+    color: #e74c3c;
+    transition: color 0.3s ease;
+}
+
+.facility-slides .single-facility-box:hover .icon i {
+    color: #c0392b;
+}
+
+.facility-slides h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .page-title-area {
+        padding: 40px 0;
+    }
+
+    .page-title-content h2 {
+        font-size: 28px;
+    }
+
+    .checkout-area {
+        padding: 50px 0;
+    }
+
+    .billing-details,
+    .order-details {
+        padding: 20px;
+    }
+
+    .user-actions {
+        padding: 15px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .user-actions i {
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .table th,
+    .table td {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .payment-box {
+        padding: 20px;
+    }
+
+    .facility-slides .single-facility-box {
+        margin: 5px;
+        padding: 20px 10px;
+    }
+
+    .facility-slides .icon i {
+        font-size: 36px;
+    }
+
+    .facility-slides h3 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .checkout-area .row.justify-content-center {
+        margin: 0;
+    }
+
+    .billing-details,
+    .order-details {
+        margin-bottom: 30px;
+    }
+
+    .default-btn {
+        width: 100%;
+        padding: 15px;
+    }
+}
+
+/* Custom scrollbar for form textareas */
+.form-control[type="textarea"] {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Focus states for better accessibility */
+.form-check-input:focus,
+.form-control:focus,
+.select-box select:focus {
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+/* Loading states (if needed for form submission) */
+.default-btn:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Print styles */
+@media print {
+    .checkout-area {
+        padding: 20px 0;
+    }
+
+    .user-actions,
+    .facility-area {
+        display: none;
+    }
+
+    .default-btn {
+        display: none;
+    }
+}

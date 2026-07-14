@@ -1,0 +1,746 @@
+/* =============================================================
+   FM Uniforms — About Page Styles
+   ALL selectors scoped under .abpg-wrap to prevent Bootstrap bleed
+   ============================================================= */
+
+/* ── Reset inside our wrapper ── */
+.abpg-wrap *,
+.abpg-wrap *::before,
+.abpg-wrap *::after {
+    box-sizing: border-box;
+}
+
+/* Override Bootstrap's default element margins/padding inside our wrapper */
+.abpg-wrap h1, .abpg-wrap h2, .abpg-wrap h3,
+.abpg-wrap h4, .abpg-wrap h5, .abpg-wrap h6 {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    font-weight: inherit;
+    line-height: inherit;
+}
+.abpg-wrap p {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+.abpg-wrap a {
+    text-decoration: none !important;
+    color: inherit;
+}
+.abpg-wrap img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ── Prevent Grid Collapse due to Bootstrap conflicts ── */
+.abpg-wrap .grid {
+    display: grid !important;
+    height: auto !important;
+    min-height: min-content !important;
+}
+
+/* ── Scrollbar ── */
+.abpg-wrap ::-webkit-scrollbar { width: 6px; }
+.abpg-wrap ::-webkit-scrollbar-track { background: #f1f1f1; }
+.abpg-wrap ::-webkit-scrollbar-thumb { background: #0f172a; border-radius: 4px; }
+.abpg-wrap ::-webkit-scrollbar-thumb:hover { background: #c99355; }
+
+/* ── Animations ── */
+@keyframes abpg-fadeIn   { from { opacity: 0; } to { opacity: 1; } }
+@keyframes abpg-slideUp  { from { transform: translateY(24px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes abpg-slideLeft  { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@keyframes abpg-slideRight { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+
+/* ── Section label pill ── */
+.abpg-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(201,147,85,0.30);
+    background: rgba(201,147,85,0.10);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #c99355;
+    margin-bottom: 16px;
+}
+.abpg-label i { font-size: 11px; }
+
+/* ── Gold accent divider ── */
+.abpg-divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+.abpg-divider::before,
+.abpg-divider::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 32px;
+    background: #c99355;
+    flex-shrink: 0;
+}
+
+/* ── Stat Cards in Hero ── */
+.abpg-stat-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 16px;
+    padding: 28px 20px;
+    min-height: 110px;
+    text-align: center;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 20px 48px rgba(0,0,0,0.30);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.abpg-stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: transparent;
+    transition: background 0.3s ease;
+}
+.abpg-stat-card:hover {
+    border-color: rgba(201,147,85,0.45);
+    transform: translateY(-4px);
+}
+.abpg-stat-card:hover::before { background: #c99355; }
+
+.abpg-stat-number {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 6px !important;
+    display: block;
+}
+.abpg-stat-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+    color: #c99355;
+    line-height: 1.3;
+    display: block;
+}
+
+/* ── Feature Strip Cards ── */
+.abpg-feature-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    transition: border-color 0.25s, background 0.25s, box-shadow 0.25s;
+}
+.abpg-feature-card:hover {
+    border-color: #c99355;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(201,147,85,0.10);
+}
+.abpg-feature-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+.abpg-feature-title {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #0f172a !important;
+    margin-bottom: 2px !important;
+}
+.abpg-feature-sub {
+    font-size: 12px !important;
+    color: #64748b !important;
+    margin-bottom: 0 !important;
+    line-height: 1.4;
+}
+
+/* ── Process Step Cards ── */
+.abpg-step-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+.abpg-step-card:hover {
+    border-color: #c99355;
+    box-shadow: 0 12px 32px rgba(201,147,85,0.12);
+}
+.abpg-step-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #f8fafc;
+    border: 2px solid rgba(201,147,85,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: #475569;
+    margin-bottom: 16px;
+    transition: border-color 0.25s, color 0.25s;
+}
+.abpg-step-card:hover .abpg-step-icon {
+    border-color: #c99355;
+    color: #c99355;
+}
+.abpg-step-num {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 9px !important;
+    font-weight: 900 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: #c99355 !important;
+    margin-bottom: 4px !important;
+    display: block;
+}
+.abpg-step-title {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #0f172a !important;
+    margin-bottom: 10px !important;
+}
+.abpg-step-desc {
+    font-size: 12px !important;
+    color: #64748b !important;
+    line-height: 1.6;
+    margin-bottom: 0 !important;
+}
+
+/* ── Process connector line (desktop only) ── */
+.abpg-steps-grid {
+    display: grid !important;
+    height: auto !important;
+    min-height: min-content !important;
+    position: relative;
+}
+@media (min-width: 1024px) {
+    .abpg-steps-grid::before {
+        content: '';
+        position: absolute;
+        top: 48px;
+        left: 10%;
+        right: 10%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent 0%, #c99355 20%, #e2b683 50%, #c99355 80%, transparent 100%);
+        opacity: 0.30;
+        z-index: 0;
+        pointer-events: none;
+    }
+}
+
+/* ── Dark Feature Banner grid wrapper ── */
+.abpg-dark-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+@media (min-width: 640px) {
+    .abpg-dark-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+    .abpg-dark-grid { grid-template-columns: repeat(5, 1fr); }
+}
+
+/* ── Dark Feature Banner items ── */
+/* CRITICAL: display:flex on items ensures parent grid gets height */
+.abpg-dark-feat {
+    padding: 32px 28px;
+    border-bottom: 1px solid #1e293b;
+    border-right: 1px solid #1e293b;
+    transition: background 0.3s;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    min-height: 180px;
+}
+.abpg-dark-feat:hover { background: rgba(255,255,255,0.035); }
+.abpg-dark-feat-icon { font-size: 2rem; color: #c99355; margin-bottom: 16px; display: block; line-height: 1; }
+.abpg-dark-feat-title {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+    color: #ffffff !important;
+    margin-bottom: 10px !important;
+    display: block;
+}
+.abpg-dark-feat-desc {
+    font-size: 12px !important;
+    color: #94a3b8 !important;
+    line-height: 1.65;
+    margin-bottom: 0 !important;
+    display: block;
+}
+
+/* ── Certification Cards ── */
+.abpg-cert-card {
+    text-align: center;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px 16px;
+    transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+.abpg-cert-card:hover {
+    border-color: #c99355;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(201,147,85,0.10);
+}
+.abpg-cert-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid #c99355;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #c99355;
+    margin: 0 auto 14px;
+}
+.abpg-cert-name {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    margin-bottom: 4px !important;
+}
+.abpg-cert-sub {
+    font-size: 11px !important;
+    color: #64748b !important;
+    margin-bottom: 0 !important;
+    line-height: 1.4;
+}
+
+/* ── Client Logo Carousel ── */
+.abpg-carousel-track {
+    display: flex;
+    width: max-content;
+    gap: 24px;
+    padding-right: 24px;
+}
+.abpg-carousel-track.scroll-left  { animation: abpg-slideLeft  36s linear infinite; }
+.abpg-carousel-track.scroll-right { animation: abpg-slideRight 36s linear infinite; }
+.abpg-carousel-track:hover { animation-play-state: paused; }
+
+.abpg-logo-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    height: 80px;
+    flex-shrink: 0;
+    border: 1px solid transparent;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.abpg-logo-card:hover {
+    border-color: #c99355;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(201,147,85,0.15);
+}
+.abpg-logo-card img {
+    max-width: 100px;
+    max-height: 52px;
+    object-fit: contain;
+}
+
+/* ── Testimonial Cards ── */
+.abpg-testimonial {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201,147,85,0.12);
+    border-radius: 16px;
+    padding: 24px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: border-color 0.3s, transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+}
+.abpg-testimonial:hover {
+    border-color: rgba(201,147,85,0.40);
+    transform: translateY(-4px);
+}
+.abpg-testimonial-text {
+    font-size: 13px !important;
+    color: #cbd5e1 !important;
+    line-height: 1.7;
+    font-style: italic;
+    margin-bottom: 20px !important;
+}
+.abpg-testimonial-name {
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    margin-bottom: 2px !important;
+}
+.abpg-testimonial-org {
+    font-size: 10px !important;
+    color: #94a3b8 !important;
+    margin-bottom: 0 !important;
+}
+
+/* ── Timeline milestone cards ── */
+.abpg-milestone-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 20px 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    text-align: left;
+}
+.abpg-milestone-card:hover {
+    border-color: #c99355;
+    box-shadow: 0 8px 24px rgba(201,147,85,0.10);
+}
+.abpg-milestone-year {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    color: #c99355 !important;
+    margin-right: 8px;
+}
+.abpg-milestone-title {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    color: #0f172a !important;
+    margin-bottom: 0 !important;
+}
+.abpg-milestone-desc {
+    font-size: 12px !important;
+    color: #64748b !important;
+    line-height: 1.6;
+    margin-top: 8px !important;
+    margin-bottom: 0 !important;
+}
+
+/* ── Pillar/Sub-brand link cards ── */
+.abpg-pillar-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+    text-decoration: none !important;
+}
+.abpg-pillar-link:hover {
+    border-color: #e2e8f0;
+    background: #f8fafc;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.abpg-pillar-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+.abpg-pillar-name {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    margin-bottom: 2px !important;
+}
+.abpg-pillar-sub {
+    font-size: 11px !important;
+    color: #64748b !important;
+    margin-bottom: 0 !important;
+}
+
+/* ── Mobile/Tablet carousel card resize ── */
+@media (max-width: 767px) {
+    .abpg-carousel-track { gap: 12px; padding-right: 12px; }
+    .abpg-logo-card { width: 110px; height: 64px; padding: 8px; }
+    .abpg-logo-card img { max-width: 86px; max-height: 44px; }
+}
+
+/* ── Timeline: left-aligned on mobile ── */
+@media (max-width: 639px) {
+    .abpg-timeline-items > div { padding-left: 32px; }
+}
+
+/* ── Dark banner: border fix for responsive grid ── */
+@media (max-width: 1023px) {
+    .abpg-dark-feat { border-right: none; }
+}
+@media (min-width: 1024px) {
+    .abpg-dark-feat { border-bottom: none; }
+    .abpg-dark-feat:last-child { border-right: none; }
+}
+
+/* =============================================================
+   RESPONSIVE — Full Device Coverage
+   xs  : ≤ 480px  (phones portrait)
+   sm  : 481–767px (phones landscape / small tablets)
+   md  : 768–1023px (tablets)
+   lg  : 1024px+  (desktop — Tailwind handles most of this)
+   ============================================================= */
+
+/* ── XS — Phones (≤ 480px) ── */
+@media (max-width: 480px) {
+
+    /* Hero section */
+    .abpg-wrap > section:first-child {
+        padding: 100px 0 56px !important;
+    }
+
+    /* Hero flex → stack */
+    .abpg-wrap > section:first-child .flex.flex-col.lg\\:flex-row {
+        flex-direction: column !important;
+        gap: 40px !important;
+    }
+
+    /* Left column — remove desktop right padding */
+    .abpg-wrap > section:first-child .w-full.lg\\:w-1\\/2:first-child {
+        padding-right: 0 !important;
+    }
+
+    /* Headline — tighter on phone */
+    .abpg-wrap h1 {
+        font-size: clamp(1.55rem, 7vw, 2rem) !important;
+        line-height: 1.22 !important;
+        margin-bottom: 18px !important;
+    }
+
+    /* Gold subheading row — wrap on small screens */
+    .abpg-wrap > section:first-child div[style*="display:flex"][style*="align-items:center"][style*="gap:12px"] {
+        flex-wrap: wrap;
+        gap: 8px !important;
+        margin-bottom: 20px !important;
+    }
+
+    /* Description paragraph */
+    .abpg-wrap > section:first-child p[style*="color:#94a3b8"] {
+        font-size: 13px !important;
+        line-height: 1.75 !important;
+        margin-bottom: 32px !important;
+    }
+
+    /* Pillar grid → 1 column on tiny phones */
+    .abpg-wrap > section:first-child .grid.grid-cols-2:not(.grid-cols-4) {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+    }
+
+    /* Stats row → 2×2 */
+    .abpg-wrap > section:first-child .grid.grid-cols-4 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+
+    /* CTA buttons → stack full width */
+    .abpg-wrap > section:first-child .flex.flex-wrap.gap-4 a {
+        width: 100% !important;
+        max-width: 100% !important;
+        justify-content: center;
+    }
+
+    /* Right image mosaic — hide on very small, or shrink */
+    .abpg-wrap > section:first-child .w-full.lg\\:w-1\\/2:last-child {
+        display: none !important;
+    }
+
+    /* Section padding for all other sections */
+    .abpg-wrap > section {
+        padding-top: 56px !important;
+        padding-bottom: 56px !important;
+    }
+
+    /* Timeline → single column */
+    .abpg-wrap .abpg-timeline-items { padding-left: 24px !important; }
+
+    /* Dark feat banner → 1 column */
+    .abpg-dark-grid { grid-template-columns: 1fr !important; }
+    .abpg-dark-feat { min-height: auto !important; padding: 24px 20px !important; }
+
+    /* Step cards → 1 column */
+    .abpg-steps-grid { grid-template-columns: 1fr !important; }
+
+    /* Cert cards → 2 columns */
+    .abpg-cert-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+    /* Testimonials → 1 column */
+    .abpg-testimonials-grid { grid-template-columns: 1fr !important; }
+
+    /* Feature strip → 1 column */
+    .abpg-features-grid { grid-template-columns: 1fr !important; }
+
+    /* Clients section heading */
+    .abpg-wrap .abpg-stat-card { padding: 18px 12px !important; min-height: 80px !important; }
+    .abpg-stat-number { font-size: 1.5rem !important; }
+}
+
+/* ── SM — Phones Landscape / Small Tablets (481px – 767px) ── */
+@media (min-width: 481px) and (max-width: 767px) {
+
+    .abpg-wrap > section:first-child {
+        padding: 110px 0 64px !important;
+    }
+
+    .abpg-wrap > section:first-child .flex.flex-col.lg\\:flex-row {
+        flex-direction: column !important;
+        gap: 48px !important;
+    }
+
+    .abpg-wrap h1 {
+        font-size: clamp(1.7rem, 5vw, 2.2rem) !important;
+        margin-bottom: 20px !important;
+    }
+
+    /* Stats row stays 4 columns on landscape phones */
+    .abpg-wrap > section:first-child .grid.grid-cols-4 {
+        grid-template-columns: repeat(4, 1fr) !important;
+    }
+
+    /* Pillar grid stays 2 cols */
+    .abpg-wrap > section:first-child .grid.grid-cols-2:not(.grid-cols-4) {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Show image mosaic but smaller */
+    .abpg-wrap > section:first-child .w-full.lg\\:w-1\\/2:last-child {
+        display: block !important;
+        max-width: 480px;
+        margin: 0 auto;
+    }
+
+    /* Step cards → 2 columns */
+    .abpg-steps-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+    /* Dark feat → 2 columns */
+    .abpg-dark-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+    /* Testimonials → 1 column */
+    .abpg-testimonials-grid { grid-template-columns: 1fr !important; }
+
+    .abpg-wrap > section {
+        padding-top: 64px !important;
+        padding-bottom: 64px !important;
+    }
+}
+
+/* ── MD — Tablets (768px – 1023px) ── */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    .abpg-wrap > section:first-child {
+        padding: 120px 0 72px !important;
+    }
+
+    .abpg-wrap > section:first-child .flex.flex-col.lg\\:flex-row {
+        flex-direction: column !important;
+        gap: 56px !important;
+    }
+
+    .abpg-wrap h1 {
+        font-size: clamp(1.9rem, 4.5vw, 2.5rem) !important;
+        margin-bottom: 22px !important;
+    }
+
+    /* Left col — limit width and center on tablet */
+    .abpg-wrap > section:first-child .w-full.lg\\:w-1\\/2:first-child {
+        max-width: 680px;
+        margin: 0 auto;
+        padding-right: 0 !important;
+    }
+
+    /* Show images in a 3-col flat row on tablet */
+    .abpg-wrap > section:first-child .w-full.lg\\:w-1\\/2:last-child {
+        display: block !important;
+        max-width: 680px;
+        margin: 0 auto;
+    }
+
+    .abpg-wrap > section:first-child .w-full.lg\\:w-1\\/2:last-child .grid.grid-cols-2 {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    .abpg-wrap > section:first-child .w-full.lg\\:w-1\\/2:last-child img {
+        height: 180px !important;
+        margin-top: 0 !important;
+    }
+
+    .abpg-wrap > section:first-child .w-full.lg\\:w-1\\/2:last-child img.col-span-2 {
+        grid-column: span 1 !important;
+    }
+
+    /* Stats stays 4 col */
+    .abpg-wrap > section:first-child .grid.grid-cols-4 {
+        grid-template-columns: repeat(4, 1fr) !important;
+    }
+
+    /* Step cards → 2 columns */
+    .abpg-steps-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+    /* Dark feat → 3 columns */
+    .abpg-dark-grid { grid-template-columns: repeat(3, 1fr) !important; }
+
+    /* Testimonials → 2 columns */
+    .abpg-testimonials-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+    .abpg-wrap > section {
+        padding-top: 72px !important;
+        padding-bottom: 72px !important;
+    }
+}
+
+/* ── Utility: apply grid class overrides to inline Tailwind grids ── */
+@media (max-width: 480px) {
+    /* Clients section: 2-row carousel still works, just scale */
+    .abpg-carousel-track { gap: 10px !important; padding-right: 10px !important; }
+    .abpg-logo-card { width: 100px !important; height: 56px !important; }
+
+    /* Milestone timeline items */
+    .abpg-milestone-card { padding: 16px !important; }
+}

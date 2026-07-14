@@ -1,0 +1,118 @@
+.account-area .account-sidebar .user-info {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.account-area .account-sidebar .user-info h5 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.account-area .account-sidebar .user-info p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.account-area .account-sidebar .nav-tabs .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    color: #495057;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.account-area .account-sidebar .nav-tabs .nav-link.active,
+.account-area .account-sidebar .nav-tabs .nav-link:hover {
+    /* background-color: #e11e12; */
+    background: linear-gradient(135deg, #e11e12 0%, #c41810 50%, #a01308 100%);
+    color: #fff;
+    border-color: #e11e12;
+}
+
+.account-area .account-sidebar .nav-tabs .nav-link i {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.account-area .tab-content .tab-pane {
+    padding: 20px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+}
+
+.account-area .account-dashboard h6 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.account-area .account-dashboard .dashboard-card {
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.account-area .account-dashboard .dashboard-card i {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.account-area .account-dashboard .dashboard-card h5 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.account-area .account-table .tables {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.account-area .account-table .tables th,
+.account-area .account-table .tables td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #dee2e6;
+}
+
+.account-area .account-table .tables th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+.address-section .address-box {
+    padding: 20px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.address-section .address-box h5 {
+    font-size: 16px;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.contact-form .form-control {
+    border-radius: 5px;
+}
+
+.contact-form h6 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.contact-form .btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+}

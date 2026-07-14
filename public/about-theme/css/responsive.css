@@ -1,0 +1,9 @@
+/* FM Uniforms — About Page Responsive Overrides
+ * All layout responsiveness is handled by:
+ *   1. Tailwind sm:/md:/lg: prefixes in about.blade.php
+ *   2. abpg-* scoped rules in index.css
+ * This file is intentionally minimal. */
+
+/* Scrollbar hide utility (kept here for compatibility) */
+.scrollbar-none::-webkit-scrollbar { display: none !important; }
+.scrollbar-none { -ms-overflow-style: none !important; scrollbar-width: none !important; }
