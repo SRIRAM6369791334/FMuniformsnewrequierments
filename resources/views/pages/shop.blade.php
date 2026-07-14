@@ -122,14 +122,20 @@
                     </div>
                     <div class="flex items-center gap-2 text-gray-500 border-l border-gray-300 pl-4">
                         <span>View:</span>
-                        <button class="text-gray-800"><i class="ph ph-squares-four text-xl"></i></button>
-                        <button class="hover:text-gray-800"><i class="ph ph-list-dashes text-xl"></i></button>
+                        <div class="inline-flex items-center rounded-md border border-gray-300 overflow-hidden bg-white">
+                            <button id="gridViewBtn" type="button" class="w-9 h-9 flex items-center justify-center text-brand-navy bg-white hover:bg-gray-50" aria-label="Grid view">
+                                <i class="ph ph-squares-four text-xl"></i>
+                            </button>
+                            <button id="listViewBtn" type="button" class="w-9 h-9 flex items-center justify-center text-gray-500 bg-white hover:text-gray-800 hover:bg-gray-50" aria-label="List view">
+                                <i class="ph ph-list-dashes text-xl"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Product Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div class="shop-product-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
                 
                 <!-- Product Card 1 -->
                 <div class="product-card border border-gray-200 rounded-lg overflow-hidden flex flex-col group transition-all bg-white relative">
@@ -394,4 +400,54 @@
             </div>
         </div>
     </section>
+@endsection
+
+@section('scripts')
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const gridBtn = document.getElementById('gridViewBtn');
+        const listBtn = document.getElementById('listViewBtn');
+        const productGrid = document.querySelector('.shop-product-grid');
+
+        if (!gridBtn || !listBtn || !productGrid) {
+            return;
+        }
+
+        function setActiveButton(activeBtn, inactiveBtn) {
+            activeBtn.classList.remove('text-gray-500');
+            activeBtn.classList.add('text-brand-navy');
+            inactiveBtn.classList.remove('text-brand-navy');
+            inactiveBtn.classList.add('text-gray-500');
+        }
+
+        function setView(view) {
+            if (view === 'grid') {
+                productGrid.classList.remove('grid-cols-1');
+                productGrid.classList.add('sm:grid-cols-2', 'md:grid-cols-3', 'xl:grid-cols-4');
+                productGrid.querySelectorAll('.product-card').forEach(card => {
+                    card.classList.remove('md:flex-row');
+                    card.classList.remove('items-center');
+                });
+                setActiveButton(gridBtn, listBtn);
+            } else {
+                productGrid.classList.add('grid-cols-1');
+                productGrid.classList.remove('sm:grid-cols-2', 'md:grid-cols-3', 'xl:grid-cols-4');
+                productGrid.querySelectorAll('.product-card').forEach(card => {
+                    card.classList.add('md:flex-row', 'items-center');
+                });
+                setActiveButton(listBtn, gridBtn);
+            }
+        }
+
+        gridBtn.addEventListener('click', function () {
+            setView('grid');
+        });
+
+        listBtn.addEventListener('click', function () {
+            setView('list');
+        });
+
+        setView('grid');
+    });
+</script>
 @endsection
